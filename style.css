@@ -1,3 +1,70 @@
+html{
+    color: #ff0000;
+    background-color: #000;
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRu0xv8Z7enlZewxZkjdUvsWci7FArIhlGcHfNzGEvxrcjYxNeFOUrsm996NurV3-NWe5YL_WIhbi57rfVmYjjDQSJZ7IE_pg-EslUq0HN);
+}
+h1, h2, h3{
+    text-align: center;
+}
+h2#titulo-primeira-aula{
+    text-decoration: underline;
+    letter-spacing: 2rem;
+}
+h2#titulo-segunda-aula{
+    text-decoration:overline;
+}
+h2:hover{
+    display: none;
+}
+main{
+    background-color: #fff;
+    font-family: cursive, sans-serif; 
+    /* aqui sans serif é um fallback, pro caso da primeira fonte não ser reconhecida. */
+    font-style: italic;
+    font-weight:900;
+    font-variant: small-caps;
+    font-size: 1.1rem; 
+    /*Atualmente rem é a melhor forma para definirtamanho. */
+}
+main p{
+        text-indent: 2rem; /* Identação do texto */
+        text-align: start;
+        /* Melhor compatibilidade, nem toda língua tem uma escrita que começa à esquerda. */
+        text-transform:capitalize;
+        /* Similar ao font-variant, mais usado para normatizar conteúdo adquirido via api de um banco de dados.*/
+
+}
+.titulo-aula{
+    background-color: chartreuse;
+}
+a{
+    color: #ffbb00;
+    cursor: crosshair;
+}
+
+/* Abaixo temos os pseudo seletores, que são basicamente seletores situacionais. */
+
+a:active{
+      color: #2f00ff;  
+}
+a:visited{
+    color: #2fec0954;
+}
+a:hover{
+    color: #010208;
+}
+
+/* O método acima uqe usa hexadecimal surgiu depois do método logo abaixo.
+
+html{
+    color: rgba(0, 0, 255, 1);
+}
+*/
+
+
+
+/* Abaixo estão as regras básicas, quanto mais específica, maior a prioridade. Entre uma regra de tag e regra de classe, a classe tem preferência, e entre uma regra de id e uma regra de classe, a regra de id tem prefrência. Você escreve das mais abrangentes para as mais específicas. Mas como as palavras red, black e etc são variáveis, algumas questões técnicas podem afetar o resultado no texo. Vamos deixar isso aqui comentado e usar uma forma técnicamente superior, usando RGB ou RGBA.
+
 h1{
     color: red;
 }
@@ -26,3 +93,13 @@ p{
 #titulo-segunda-aula{
     color: brown;
 }
+.texto-vermelho .comentario{
+    color: blue;
+}
+.texto-vermelho.comentario{
+    color: green;
+}
+.comentario{
+    color: red;
+}
+    */
