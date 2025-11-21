@@ -1,0 +1,115 @@
+// Variáveis
+@cor-primaria: blue;
+@cor-secundaria: red;
+@cor-terciaria: green;
+@tamanho-base: 20px;
+@largura-body: 80%;
+
+// Mixins
+.sombra-texto(@corSombra: #ccc) {
+    text-shadow: 2px 1px 1px @corSombra;
+    text-decoration: underline;
+}
+
+.sombra-texto-com-fundo(@corTexto: darkgreen, @corFundo: rgb(139,74,125)) {
+    color: @corTexto;
+    text-shadow: 2px 1px 1px #ccc;
+    text-decoration: underline;
+    background-color: @corFundo;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+// Estilos
+body {
+    background-color: rgb(210,212,208);
+    width: @largura-body;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    .sombra-texto();
+    color: @cor-secundaria;
+    font-size: @tamanho-base + 10;
+}
+
+h2 {
+    .sombra-texto-com-fundo(rgb(165,33,0), #FFF);
+}
+
+p {
+    color: @cor-primaria;
+    line-height: 1.6;
+    
+    b {
+        color: @cor-secundaria;
+        font-weight: bold;
+    }
+}
+
+// IDs para as divs
+#div1 {
+    font-size: @tamanho-base;
+    color: @cor-terciaria;
+    background-color: lighten(@cor-terciaria, 45%);
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border-left: 4px solid @cor-terciaria;
+}
+
+#div2 {
+    font-size: @tamanho-base + 5;
+    color: spin(@cor-terciaria, 30);
+    background-color: lighten(spin(@cor-terciaria, 30), 45%);
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border-left: 4px solid spin(@cor-terciaria, 30);
+}
+
+#div3 {
+    font-size: @tamanho-base + 10;
+    color: darken(@cor-terciaria, 10%);
+    background-color: lighten(darken(@cor-terciaria, 10%), 45%);
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border-left: 4px solid darken(@cor-terciaria, 10%);
+}
+
+// Estilos para links/botões
+.botao {
+    background-color: #f44336;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 5px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+
+    &:hover {
+        background-color: darken(#f44336, 10%);
+        transform: translateY(-2px);
+    }
+}
+
+.navegacao {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.rodape {
+    text-align: center;
+    margin-top: 30px;
+    color: #666;
+    font-style: italic;
+}
